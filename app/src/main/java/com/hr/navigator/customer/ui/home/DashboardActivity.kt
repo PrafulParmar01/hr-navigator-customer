@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.location.Location
 import android.location.LocationManager
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -26,6 +27,7 @@ import com.hr.navigator.customer.databinding.ActivityHomeBinding
 import com.hr.navigator.customer.geofencing.GeofenceManager
 import com.hr.navigator.customer.services.LocationRequestEvent
 import com.hr.navigator.customer.services.LocationsService
+import com.hr.navigator.customer.ui.accounts.AccountsActivity
 import com.hr.navigator.customer.ui.profile.CompanyModel
 import com.hr.navigator.customer.ui.profile.UserModel
 import com.hr.navigator.customer.utils.AppPermission
@@ -91,6 +93,10 @@ class DashboardActivity : BaseActivity(), OnMapReadyCallback {
         binding.btnManuallyEntry.setOnClickListener {
             showManuallyEntryDialog()
         }
+
+        binding.btnAccount.setOnClickListener {
+            startActivityWithFadeInAnimation(AccountsActivity.getIntent(this))
+        }
     }
 
     private fun syncGeofencing() {
@@ -141,7 +147,11 @@ class DashboardActivity : BaseActivity(), OnMapReadyCallback {
 
     private fun onSyncLocationService() {
         if (!LocationsService.isServiceRunning(mContext)) {
-            startService(LocationsService.getIntent(this))
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(LocationsService.getIntent(this))
+            } else {
+                startService(LocationsService.getIntent(this))
+            }
         }
     }
 
@@ -230,10 +240,12 @@ class DashboardActivity : BaseActivity(), OnMapReadyCallback {
                     dialog.dismiss()
                     onManuallyEntry(true)
                 }
+
                 1 -> {
                     dialog.dismiss()
                     onManuallyEntry(false)
                 }
+
                 else -> {
                     dialog.dismiss()
                 }
@@ -312,8 +324,7 @@ class DashboardActivity : BaseActivity(), OnMapReadyCallback {
                         val destLatitude = userModel.companyModel.latitude.toDouble()
                         val destLongitude = userModel.companyModel.longitude.toDouble()
                         val destination = LatLng(destLatitude, destLongitude)
-                        val title =
-                            userModel.companyModel.companyName + "\n" + userModel.addressLine
+                        val title = userModel.companyModel.companyName
                         mMap.addMarker(
                             MarkerOptions()
                                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))

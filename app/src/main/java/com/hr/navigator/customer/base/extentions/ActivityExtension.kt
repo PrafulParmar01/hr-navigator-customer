@@ -11,9 +11,6 @@ import android.os.Build
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-
 
 fun Activity.startActivityForResultWithFadeInAnimation(intent: Intent, requestCode: Int) {
     startActivityForResult(intent, requestCode)
@@ -42,27 +39,6 @@ fun Context.toastShort(message: CharSequence) {
 
 fun Context.toastLong(message: CharSequence) {
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-}
-
-inline fun <reified T : ViewModel> AppCompatActivity.getViewModel(
-        crossinline factory: () -> T
-): T {
-    return createViewModel(factory)
-}
-
-
-@Suppress("UNCHECKED_CAST")
-inline fun <reified T : ViewModel> AppCompatActivity.createViewModel(crossinline factory: () -> T): T {
-
-    val vmFactory = object : ViewModelProvider.Factory {
-        override fun <U : ViewModel> create(modelClass: Class<U>): U = factory() as U
-    }
-
-    return ViewModelProvider(this, vmFactory)[T::class.java]
-}
-
-inline fun <reified T : ViewModel> AppCompatActivity.getViewModelFromFactory(vmFactory: ViewModelProvider.Factory): T {
-    return ViewModelProvider(this, vmFactory)[T::class.java]
 }
 
 

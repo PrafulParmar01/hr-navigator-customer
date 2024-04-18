@@ -9,14 +9,11 @@ import androidx.fragment.app.Fragment
 import com.hr.navigator.customer.utils.JSDialogUtils
 import com.hr.navigator.customer.receivers.NetworkConnectivityReceiver
 import com.hr.navigator.customer.receivers.NetworkRefreshEvent
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.disposables.Disposable
 import org.greenrobot.eventbus.EventBus
 
 
 abstract class BaseActivity : AppCompatActivity() {
 
-    val compositeDisposable = CompositeDisposable()
     lateinit var mContext: Activity
     lateinit var progressDialogs: JSDialogUtils
 
@@ -44,16 +41,13 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
         override fun onDestroy() {
-            compositeDisposable.clear()
             super.onDestroy()
             if (networkReceiver != null) {
                 this.unregisterReceiver(networkReceiver)
             }
         }
 
-        fun Disposable.autoDispose() {
-            compositeDisposable.add(this)
-        }
+
 
     fun replaceFragment(fragment: Fragment?, mContainerId: Int) {
         try {

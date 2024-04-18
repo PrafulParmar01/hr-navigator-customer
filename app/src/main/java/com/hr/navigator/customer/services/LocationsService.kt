@@ -1,7 +1,9 @@
 package com.hr.navigator.customer.services
 
 import android.app.ActivityManager
+import android.app.Service
 import android.content.Context
+import android.content.Context.ACTIVITY_SERVICE
 import android.content.Intent
 import android.location.Location
 import android.os.IBinder
@@ -13,7 +15,7 @@ import org.greenrobot.eventbus.EventBus
 import timber.log.Timber
 
 
-class LocationsService : LifecycleService(), BaseLocationHelper.NewLocationListener {
+class LocationsService : Service(), BaseLocationHelper.NewLocationListener {
 
     private lateinit var mContext: Context
     private lateinit var notificationUtils: NotificationUtils
@@ -40,7 +42,6 @@ class LocationsService : LifecycleService(), BaseLocationHelper.NewLocationListe
     }
 
     override fun onBind(intent: Intent): IBinder? {
-        super.onBind(intent)
         return null
     }
 

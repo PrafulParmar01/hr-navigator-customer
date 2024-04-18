@@ -25,6 +25,7 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="30dp"
+            android:id="@+id/btnAccount"
             android:layout_height="30dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"

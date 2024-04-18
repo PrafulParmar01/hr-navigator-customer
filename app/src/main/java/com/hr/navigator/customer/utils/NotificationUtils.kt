@@ -25,11 +25,13 @@ class NotificationUtils(private val mContext: Context) {
     private val mResources: Resources
     private var locationsService: LocationsService? = null
     private var channelLocationId = ""
+    private var channelMessageId = ""
 
     init {
         notificationManager = mContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         mResources = mContext.resources
         channelLocationId = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) createLocationNotificationChannel(notificationManager) else ""
+        channelMessageId = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) createMessageNotificationChannel(notificationManager) else ""
 
         if (mContext is LocationsService) {
             locationsService = mContext
@@ -40,7 +42,7 @@ class NotificationUtils(private val mContext: Context) {
     fun startForegroundLocationNotification() {
         notificationBuilder = NotificationCompat.Builder(mContext, channelLocationId)
         notification = notificationBuilder.setOngoing(true)
-            .setSmallIcon(R.mipmap.ic_launcher)
+            .setSmallIcon(R.mipmap.ic_logo_user)
             .setContentTitle("Location Service")
             .setContentText("Service is running...")
             .setPriority(NotificationCompat.PRIORITY_HIGH)
@@ -56,10 +58,26 @@ class NotificationUtils(private val mContext: Context) {
     }
 
 
+    fun startMessageNotification(message:String) {
+        notificationBuilder = NotificationCompat.Builder(mContext, channelMessageId)
+        notification = notificationBuilder.setOngoing(true)
+            .setSmallIcon(R.mipmap.ic_logo_user)
+            .setContentText(message)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setCategory(NotificationCompat.CATEGORY_SERVICE)
+            .setAutoCancel(true)
+            .setContentIntent(launchIntent())
+            .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+            .build()
+        notificationManager?.notify(5000, notification)
+    }
+
+
+
     @RequiresApi(Build.VERSION_CODES.O)
     private fun createLocationNotificationChannel(notificationManager: NotificationManager?): String {
         val channelId = "hr_navigator_user_location_service_channel_id"
-        val channelName = "hr navigator user location Service"
+        val channelName = "hr navigator user location service"
         val channel = NotificationChannel(
             channelId,
             channelName,
@@ -70,6 +88,24 @@ class NotificationUtils(private val mContext: Context) {
         notificationManager!!.createNotificationChannel(channel)
         return channelId
     }
+
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun createMessageNotificationChannel(notificationManager: NotificationManager?): String {
+        val channelId = "hr_navigator_user_message_service_channel_id"
+        val channelName = "hr navigator user message service"
+        val channel = NotificationChannel(
+            channelId,
+            channelName,
+            NotificationManager.IMPORTANCE_HIGH
+        )
+        channel.importance = NotificationManager.IMPORTANCE_HIGH
+        channel.lockscreenVisibility = Notification.VISIBILITY_PUBLIC
+        notificationManager!!.createNotificationChannel(channel)
+        return channelId
+    }
+
+
 
 
     @SuppressLint("UnspecifiedImmutableFlag")
