@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "512107807649",
+    "project_id": "hr-navigator-8110",
+    "storage_bucket": "hr-navigator-8110.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512107807649:android:eb5a389b43758c9df8c1e0",
+        "android_client_info": {
+          "package_name": "com.hr.navigator.business"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN5Nsl8ZVDPghLd4z3KKTzrltecugsMA4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512107807649:android:b6dd761a74b6245af8c1e0",
+        "android_client_info": {
+          "package_name": "com.hr.navigator.customer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN5Nsl8ZVDPghLd4z3KKTzrltecugsMA4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

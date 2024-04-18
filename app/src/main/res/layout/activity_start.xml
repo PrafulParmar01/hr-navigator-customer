@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".ui.start.StartActivity">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:gravity="center"
+        android:text="HR Navigator : User"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_18sdp" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_alignParentBottom="true"
+        android:text="Version 1.0.0"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorLightGrey"
+        android:textSize="@dimen/_10sdp" />
+
+</RelativeLayout>

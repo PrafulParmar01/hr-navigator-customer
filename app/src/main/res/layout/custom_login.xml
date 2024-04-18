@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parentView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/labelSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="@string/label_log_in_to_your_account"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_18ssp" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:id="@+id/labelWelcome"
+        android:layout_below="@+id/labelSignIn"
+        android:text="Welcome back, you have been missed"
+        android:textColor="@color/colorGrey"
+        android:textSize="@dimen/_12ssp" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_46sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/rounded_border"
+        android:drawableStart="@drawable/ic_phone"
+        android:drawablePadding="@dimen/_8sdp"
+        android:hint="@string/text_enter_mob_num"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:maxLines="1"
+        android:layout_below="@+id/labelWelcome"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_14ssp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_below="@+id/edit_login"
+        android:id="@+id/labelVerification"
+        android:text="@string/label_you_will_receive"
+        android:textColor="@color/colorGrey"
+        android:textSize="@dimen/_12ssp" />
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnGetStarted"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_44sdp"
+        android:background="@drawable/rounded_yellow"
+        android:drawablePadding="@dimen/_8sdp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:text="@string/text_get_started"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_14ssp" />
+
+
+</RelativeLayout>

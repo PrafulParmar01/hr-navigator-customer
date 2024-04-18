@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="0dp"
+    android:paddingTop="@dimen/_10sdp"
+    android:paddingEnd="@dimen/_6sdp"
+    android:paddingBottom="@dimen/_10sdp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtCompanyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="Company Name"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_15ssp" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtAddressLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="Address: Kamrej, Gujarat, India"
+                android:textColor="@color/colorGrey"
+                android:textSize="@dimen/_11ssp" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="E-mail: masterinfosys@gmail.com"
+                android:textColor="@color/colorGrey"
+                android:textSize="@dimen/_11ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Phone No. +91 82000 78965"
+                android:textColor="@color/colorGrey"
+                android:textSize="@dimen/_11ssp" />
+
+
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnCheck"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_unchecked" />
+
+
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="#ccc" />
+
+</LinearLayout>

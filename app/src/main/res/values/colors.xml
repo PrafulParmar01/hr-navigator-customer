@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#212121</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#ffeead</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBackground">#E6E6E6</color>
+
+    <!--App Colors-->
+    <color name="color_hint">#663F3D56</color>
+    <color name="color_gray_light">#D4DAE2</color>
+    <color name="color_gray_dark">#C5CBD5</color>
+    <color name="colorTheme">#6750a4</color>
+    <color name="colorThemeDark">#503F7F</color>
+    <color name="colorLightGrey">#7A7A7A</color>
+    <color name="colorGrey">#676767</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorPink">#FF2B55</color>
+    <color name="colorBgCard">#C6C5D6</color>
+    <color name="colorGretText">#757575</color>
+    <color name="colorTags">#CBF3AB</color>
+    <color name="colorGrey20">#333F3D56</color>
+    <color name="colorGrey40">#663F3D56</color>
+    <color name="colorGrey10">#C5CBD5</color>
+
+
+    <color name="colorDarkGray">#3F3D56</color>
+    <color name="colorMediumGray">#7B7C8D</color>
+    <color name="colorLightGray">#9A9DA0</color>
+    <color name="colorLightGrayIcon">#CBCDDA</color>
+    <color name="colorFailed">#E53935</color>
+    <color name="colorGreen">#43A047</color>
+</resources>

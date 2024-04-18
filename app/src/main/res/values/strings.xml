@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">HR Navigator Customer</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="label_customers">Customers</string>
+    <string name="label_admin_panel">Admin Panel</string>
+    <string name="label_customer_request">Customer Request</string>
+    <string name="label_save">Save</string>
+
+    <string name="label_you_will_receive">You will receive an SMS verification that may apply message and data rates.</string>
+    <string name="label_log_in_to_your_account">Let\'s you sign in</string>
+    <string name="label_enter_the_4_digit">Enter the 4-digit code</string>
+
+    <string name="label_otp_time_out">Resend OTP in : 00:%1$s</string>
+    <string name="label_error_enter_mob_num">Please Enter Mobile Number</string>
+    <string name="label_enter_otp">Please Enter OTP</string>
+    <string name="msg_something_went_wrong">Something went wrong. Please try again</string>
+    <string name="msg_otp_sent_successfully">OTP sent successfully</string>
+    <string name="msg_login_successfully">Login successfully</string>
+    <string name="label_app_Version">Version :  %1$s</string>
+
+    <string name="text_welcome">Welcome!</string>
+    <string name="text_you_have_new_order">You have new orders</string>
+    <string name="text_get_started">Get Started</string>
+    <string name="text_login">Login</string>
+    <string name="text_enter_mob_num">Enter Mobile Number</string>
+    <string name="text_get_otp">Get OTP</string>
+    <string name="text_otp">OTP</string>
+    <string name="text_submit">Submit</string>
+    <string name="label_next">Next\n</string>
+
+    <string name="enable_gps">Enable GPS</string>
+    <string name="enable_gps_msg">GPS is not enabled. The app needs your device’s location turned on to work properly.</string>
+    <string name="label_settings">Settings</string>
+    <string name="no_close_app">Cancel</string>
+    <string name="label_submit">SUBMIT</string>
+</resources>
