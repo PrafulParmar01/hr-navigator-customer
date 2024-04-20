@@ -17,7 +17,10 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.gson.Gson
 import com.hr.navigator.customer.R
 import com.hr.navigator.customer.base.BaseActivity
@@ -40,6 +43,7 @@ import com.permissionx.guolindev.request.ForwardScope
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
+import timber.log.Timber
 
 
 class DashboardActivity : BaseActivity(), OnMapReadyCallback {
@@ -52,6 +56,7 @@ class DashboardActivity : BaseActivity(), OnMapReadyCallback {
     private lateinit var locationRequester: LocationRequester
 
     private lateinit var geofenceManager: GeofenceManager
+    private lateinit var userModel:UserModel
 
 
     companion object {
@@ -72,8 +77,10 @@ class DashboardActivity : BaseActivity(), OnMapReadyCallback {
         appPermission = AppPermission(this)
         locationRequester = LocationRequester(this)
         geofenceManager = GeofenceManager(this)
-        getLocationPermission()
+        userModel = UtilsMethod.convertStringToUserModel(mContext)
+        getUserModelData()
 
+        getLocationPermission()
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
 
@@ -97,6 +104,20 @@ class DashboardActivity : BaseActivity(), OnMapReadyCallback {
         binding.btnAccount.setOnClickListener {
             startActivityWithFadeInAnimation(AccountsActivity.getIntent(this))
         }
+    }
+
+    private fun getUserModelData() {
+        val firebase = FirebaseDatabase.getInstance()
+        val reference = firebase.reference
+        reference.child("Users").child(userModel.phone).addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val userModel: UserModel? = snapshot.getValue(UserModel::class.java)
+                    PrefUtil.putStringPref(PrefUtil.PREF_USER_MODEL, Gson().toJson(userModel),applicationContext)
+                }
+                override fun onCancelled(error: DatabaseError) {
+                    Timber.e("onCancelled: ===> ${error.message}")
+                }
+            })
     }
 
     private fun syncGeofencing() {

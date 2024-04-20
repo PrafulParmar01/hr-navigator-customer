@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "512107807649",
-    "project_id": "hr-navigator-8110",
-    "storage_bucket": "hr-navigator-8110.appspot.com"
+    "project_number": "1091236048304",
+    "firebase_url": "https://hr-navigator-d15f4-default-rtdb.firebaseio.com",
+    "project_id": "hr-navigator-d15f4",
+    "storage_bucket": "hr-navigator-d15f4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:512107807649:android:eb5a389b43758c9df8c1e0",
+        "mobilesdk_app_id": "1:1091236048304:android:7ce7b5e19be268d0977a75",
         "android_client_info": {
           "package_name": "com.hr.navigator.business"
         }
@@ -15,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBN5Nsl8ZVDPghLd4z3KKTzrltecugsMA4"
+          "current_key": "AIzaSyDgvLy5sSYszEZ69I5yLIRb7otZnIQDlnk"
         }
       ],
       "services": {
@@ -26,7 +27,7 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:512107807649:android:b6dd761a74b6245af8c1e0",
+        "mobilesdk_app_id": "1:1091236048304:android:6c431a116507a62f977a75",
         "android_client_info": {
           "package_name": "com.hr.navigator.customer"
         }
@@ -34,7 +35,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBN5Nsl8ZVDPghLd4z3KKTzrltecugsMA4"
+          "current_key": "AIzaSyDgvLy5sSYszEZ69I5yLIRb7otZnIQDlnk"
         }
       ],
       "services": {
